@@ -85,16 +85,20 @@ sudo systemctl start memcached
 systemctl status memcached
 ```
 
-!["systemctl status memcached"](https://github.com/radiomost/redis-memcached/blob/main/img/img21.png)
+![""](https://github.com/radiomost/redis-memcached/blob/main/img/img21.png)
 
 ## Задание 3. Удаление по TTL в Memcached
 Запишите в memcached несколько ключей с любыми именами и значениями, для которых выставлен TTL 5.
 
-*Приведите скриншот, на котором видно, что спустя 5 секунд ключи удалились из базы.*
+*Приведите скриншот, на котором видно, что спустя 5* секунд ключи удалились из базы.*
 
 ### Ответ
 
+*Коллеги, я увеличил TTL до 120 секунд, потому что за 5 секунд нереально записать и считать значения в/из memcached через командную строку.
 
+![""](https://github.com/radiomost/redis-memcached/blob/main/img/img22.png)
+
+На скриншоте можно наблюдать запись и считывание двух переменных с ключами, а также очитстку после окончания времени TTL.
 
 ## Задание 4. Запись данных в Redis
 Запишите в Redis несколько ключей с любыми именами и значениями.
@@ -106,7 +110,26 @@ systemctl status memcached
 
 ### Ответ
 
+**Установка Redis на Ubuntu/Debian**
+```bash
+sudo apt update
+sudo apt install redis-server -y
+```
+**Запуск и проверка статуса Redis**
+```bash
+sudo systemctl enable redis
+sudo systemctl start redis
+sudo systemctl status redis
+```
 
+**Запускаем клиент:**
+```bash
+redis-cli
+```
+![""](https://github.com/radiomost/redis-memcached/blob/main/img/img23.png)
+
+На скриншоте видно:
+запись ключей трехданных с параметром <ключ>:<значение>
 
 ## Задание 5*. Работа с числами
 Запишите в Redis ключ key5 со значением типа "int" равным числу 5. Увеличьте его на 5, чтобы в итоге в значении лежало число 10.
@@ -115,3 +138,6 @@ systemctl status memcached
 
 ### Ответ
 
+Мне кажется, описание не требуется. Все на скриншоте ниже.
+
+![""](https://github.com/radiomost/redis-memcached/blob/main/img/img24.png)
