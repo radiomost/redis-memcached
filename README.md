@@ -67,7 +67,25 @@
 
 ### Ответ
 
+**Установка Memcached**
+На Ubuntu/Debian:
+```bash
+sudo apt update
+sudo apt install memcached libmemcached-tools -y
+```
 
+**Запуск и включение Memcached**
+```bash
+sudo systemctl enable memcached
+sudo systemctl start memcached
+```
+
+**Проверка статуса**
+```bash
+systemctl status memcached
+```
+
+!["systemctl status memcached"](https://github.com/radiomost/redis-memcached/blob/main/img/img21.png)
 
 ## Задание 3. Удаление по TTL в Memcached
 Запишите в memcached несколько ключей с любыми именами и значениями, для которых выставлен TTL 5.
